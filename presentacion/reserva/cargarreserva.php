@@ -1,9 +1,13 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/estilos.css">
     <title>Document</title>
 </head>
 <body>
@@ -11,13 +15,13 @@
         <h1>Módulo de Reservas</h1>
         <hr>
         <a href="guardarreserva.php">Crear Nuevo</a>
-        <?php
-            require_once '../datos/conexion.php';
-            require_once '../entidades/Reserva.php';
-            require_once '../interfaces/IReserva.php';
-            require_once '../logica/LReserva.php';
+        <?php 
+            require_once 'C:/APACHE_SINDY TRABAJOS/apache/Apache24/htdocs/RepoHostal/datos/conexion.php';
+            require_once 'C:/APACHE_SINDY TRABAJOS/apache/Apache24/htdocs/RepoHostal/entidades/Reserva.php';
+            require_once 'C:/APACHE_SINDY TRABAJOS/apache/Apache24/htdocs/RepoHostal/interfaces/IReserva.php';
+            require_once 'C:/APACHE_SINDY TRABAJOS/apache/Apache24/htdocs/RepoHostal/logica/LReserva.php';
             $log=new LReserva();
-            $reservas= $log->listar();
+            $reservas= $log->cargar();
         ?>
         <table border='1'>
             <thead>
@@ -46,8 +50,8 @@
                     <td><?=$res->getTipo_Pago()?></td>
                     <td><?=$res->getRoom_Service()?></td>
 
-                    <td><a href="modificarreserva.php">Modificar</a></td>
-                    <td><a href="borrareserva.php?idres=<?= $res->getId_Reserva() ?>">Borrar</a></td>
+                    <td><a href="modificarreserva.php?idres=<?=$res->getId_Reserva()?>">Modificar</a></td>
+                    <td><a href="borrarreserva.php?id_reserva=<?=$res->getId_Reserva()?>">Borrar</a></td>
                 </tr>
                 <?php
                     }       

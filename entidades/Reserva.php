@@ -1,5 +1,5 @@
 <?php
-class Usuario {
+class Reserva {
     private $id_reserva;
     private $id_huesped;
     private $id_habitacion;
@@ -8,7 +8,6 @@ class Usuario {
     private $fecha_checkout;
     private $tipo_pago;
     private $room_service;
-
     public function getId_Reserva(){
         return $this->id_reserva;
     }
