@@ -1,32 +1,34 @@
-<?php
+<?php 
 require_once '../../datos/conexion.php';
 
+if (!isset($_POST['nombre_usuario']) || !isset($_POST['contrasena'])) {
+    echo "Error: el formulario no envió datos.";
+    exit();
+}
+
 $nombre_usuario = $_POST['nombre_usuario'];
-$contraseña = $_POST['contraseña'];
+$contrasena = $_POST['contrasena']; 
 
 $instruccionSql = $con->prepare("
     SELECT * FROM usuarios 
     WHERE nombre_usuario = :nombre_usuario
-    AND contraseña = :contraseña
+    AND `CONTRASEÑA` = :contrasena
 ");
 
 $instruccionSql->execute([
     ':nombre_usuario' => $nombre_usuario,
-    ':contraseña' => $contraseña
+    ':contrasena' => $contrasena
 ]);
 
-// Verificamos si existe el usuario
 if ($registro = $instruccionSql->fetch(PDO::FETCH_OBJ)) {
 
     session_start();
 
-    // Guardamos datos en sesión
     $_SESSION["Id_Usuario"]     = $registro->id_usuario;
     $_SESSION["Nombre_Usuario"] = $registro->nombre_usuario;
-    $_SESSION["Contraseña"]     = $registro->contraseña;
+    $_SESSION["Contrasena"]     = $registro->{"CONTRASEÑA"};
     $_SESSION["Rol"]            = $registro->rol;
 
-    // Redirección por roles
     switch ($_SESSION["Rol"]) {
 
         case "Administrador":
@@ -53,7 +55,8 @@ if ($registro = $instruccionSql->fetch(PDO::FETCH_OBJ)) {
     exit();
 
 } else {
-    echo "Las credenciales del usuario no existen";
+    header("Location: login.php?error=1");
+exit();
 }
-?>
 
+?>

@@ -13,9 +13,14 @@
     <form action="logincontroller.php" method="post">
         <input name="nombre_usuario" type="text" placeholder="Escribe tu nombre de usuario">
         <br><br>
-        <input name="contraseña" type="password" placeholder="Contraseña">
+        <input name="contrasena" type="password" placeholder="Contraseña">
         <br><br>
         <input type="submit" value="Iniciar sesión">
+        <?php if (isset($_GET['error'])): ?>
+    <div class="error">
+        Las credenciales del usuario no existen
+    </div>
     </form>
+<?php endif; ?>
 </body>
 </html>
