@@ -22,7 +22,6 @@ error_reporting(E_ALL);
     <input type="text" name="Metodo_pago" placeholder="Ingrese tipo de pago" required>
     <input type="submit" value="Modificar">
 </form>
-
 </body>
 </html>
 <?php

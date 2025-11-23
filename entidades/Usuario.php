@@ -12,7 +12,7 @@ class Usuario {
         $this->id_usuario=$id_usuario;
     }
     public function getNombre_Usuario(){
-        return $this->id_usuario;
+        return $this->nombre_usuario;
     }
     public function setNombre_Usuario($nombre_usuario){
         $this->nombre_usuario=$nombre_usuario;
@@ -20,7 +20,7 @@ class Usuario {
     public function getContrasena(){
         return $this->contrasena;
     }
-    public function setContraseña($contrasena){
+    public function setContrasena($contrasena){
         $this->contrasena=$contrasena;
     }
     public function getRol(){
