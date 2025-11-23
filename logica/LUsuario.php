@@ -14,7 +14,7 @@
             foreach($filas as $f){ //iteramos nuestras filas
                 $fam=new Usuario(); //declaramos un objeto de tipo familia para setearle nuestra fila
                 $fam->getId_Usuario($f[0]);
-                $fam->getContraseña($f[1]);
+                $fam->getContrasena($f[1]);
                 $fam->getRol($f[2]);
                 array_push($usuarios, $usu); //agregamos nuestro objeto con la fila seteada a nuestra lista de familias
             }
