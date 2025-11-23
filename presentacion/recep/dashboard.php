@@ -8,7 +8,6 @@ if (!isset($_SESSION["Rol"]) || $_SESSION["Rol"] !== "Recepcionista") {
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
     <meta charset="UTF-8">
     <title>Panel Recepcionista</title>
     <link rel="stylesheet" href="recep.css">
