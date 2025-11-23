@@ -1,5 +1,9 @@
 <?php 
 require_once '../../datos/conexion.php';
+include 'DB.php';
+
+$db = new DB();
+$con = $db->conectar();
 
 if (!isset($_POST['nombre_usuario']) || !isset($_POST['contrasena'])) {
     echo "Error: el formulario no envió datos.";
