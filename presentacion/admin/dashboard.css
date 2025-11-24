@@ -1,0 +1,108 @@
+/* dashboard.css — Estilos específicos para el panel de recepción y administración */
+
+/* Contenedor principal del dashboard */
+.dashboard-container{
+  display:flex;
+  gap:18px;
+  padding:16px;
+}
+
+/* Tarjetas de KPIs */
+.kpi-card{
+  background:white;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.kpi-title{
+  font-size:13px;
+  color:#6b7280;
+}
+.kpi-value{
+  font-size:24px;
+  font-weight:700;
+  color:#2a74d9;
+}
+
+/* Panel lateral del dashboard */
+.sidebar-dashboard{
+  width:240px;
+  background:white;
+  padding:14px;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+.sidebar-dashboard ul{
+  list-style:none;
+}
+.sidebar-dashboard li{
+  padding:10px;
+  margin-bottom:8px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.2s;
+}
+.sidebar-dashboard li:hover{
+  background:#e8f1ff;
+  color:#2a74d9;
+}
+
+/* Área del contenido */
+.dashboard-content{
+  flex:1;
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Tablas del dashboard */
+.dashboard-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+.dashboard-table th,
+.dashboard-table td{
+  padding:10px;
+  border-bottom:1px solid #e5e7eb;
+}
+.dashboard-table th{
+  background:#f1f5fb;
+  font-size:14px;
+}
+.dashboard-table tr:hover{
+  background:#f9fbff;
+}
+
+/* Encabezados del dashboard */
+.dashboard-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:16px;
+}
+.dashboard-header h2{
+  font-size:22px;
+  font-weight:700;
+}
+
+/* Botones dentro del dashboard */
+.dashboard-btn{
+  background:#2a74d9;
+  padding:8px 14px;
+  color:white;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  transition:0.2s;
+}
+.dashboard-btn:hover{
+  opacity:0.85;
+}

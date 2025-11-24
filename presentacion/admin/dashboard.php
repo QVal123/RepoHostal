@@ -12,7 +12,9 @@ session_destroy();
 <head>
     <meta charset="UTF-8">
     <title>Panel Administrador</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="dashboard.css">
+
+
 </head>
 
 <body>
